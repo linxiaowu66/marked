@@ -2,7 +2,7 @@
   "name": "marked-katex",
   "description": "markdown parser fork from git://github.com/chjj/marked.git, and in additional we support the katex, thus we can integrated with mathML in the markdown text",
   "author": "Christopher Jeffrey",
-  "version": "0.3.7",
+  "version": "0.3.8",
   "main": "./lib/marked.js",
   "bin": "./bin/marked",
   "man": "./man/marked.1",

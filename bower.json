@@ -1,15 +1,17 @@
 {
-  "name": "marked",
-  "version": "0.3.4",
-  "homepage": "https://github.com/chjj/marked",
+  "name": "marked-katex",
+  "version": "0.3.8",
+  "homepage": "https://github.com/linxiaowu66/marked-kaTex",
   "authors": [
     "Christopher Jeffrey <chjjeffrey@gmail.com>"
   ],
-  "description": "A markdown parser built for speed",
+  "description": "markdown parser fork from git://github.com/chjj/marked.git, and in additional we support the katex, thus we can integrated with mathML in the markdown text",
   "keywords": [
     "markdown",
     "markup",
-    "html"
+    "html",
+    "katex",
+    "math"
   ],
   "main": "lib/marked.js",
   "license": "MIT",
