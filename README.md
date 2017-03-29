@@ -1,7 +1,7 @@
 # marked
 
 > A full-featured markdown parser and compiler, written in JavaScript. Built
-> for speed.
+> for speed. This fork version we has supported the Katex which can write the math expression in markdown
 
 [![NPM version](https://badge.fury.io/js/marked.png)][badge]
 
@@ -83,6 +83,59 @@ async highlighting. If the `options` argument is omitted, this can be used as
 the second argument.
 
 ## Options
+
+### kaTex
+
+Type: `function`
+
+A function to integrated with kaTex. If you want to show your math expression in the markdown, just config this option, for example:
+
+**In Server Side**
+```
+var marked = require('marked');
+var katex = require('katex');
+marked.setOptions({
+  highlight: function(code, lang) {
+    if (typeof lang === 'undefined') {
+      return hljs.highlightAuto(code).value;
+    } else if (lang === 'nohighlight') {
+      return code;
+    } else {
+      return hljs.highlight(lang, code).value;
+    }
+  },
+  kaTex: katex
+});
+```
+
+the katex syntax you can refer the [wiki](https://github.com/Khan/KaTeX/wiki/Function-Support-in-KaTeX)
+
+so when you write this string in your markdown text:
+
+```
+`$$c=\sqrt{a^2 + b^2}$$`
+```
+it will be render to the standard math expression.
+
+we support the codespan(`...`) or codeBlock(```...```).
+
+the annotation we support the `$` or `$$`, which they have different meanings:
+* $: just display the expression inline
+* $$: just display the expression with block and align center
+
+**In Client Side**
+
+you should import the katex firstly, and then link the kaTex style in you html page:
+
+```
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/KaTeX/0.7.1/katex.min.css" integrity="sha384-wITovz90syo1dJWVh32uuETPVEtGigN07tkttEqPv+uR2SE/mbQcG7ATL28aI9H0" crossorigin="anonymous">
+```
+
+and other code is similar with the server side.
+
+Also this package can be fetched via `bower`
+
+If you have any issues with this option, just feel free to PR.
 
 ### highlight
 
