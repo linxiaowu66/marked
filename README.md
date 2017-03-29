@@ -3,12 +3,12 @@
 > A full-featured markdown parser and compiler, written in JavaScript. Built
 > for speed. This fork version we has supported the Katex which can write the math expression in markdown
 
-[![NPM version](https://badge.fury.io/js/marked.png)][badge]
+[![NPM version](https://badge.fury.io/js/marked-katex.png)][badge]
 
 ## Install
 
 ``` bash
-npm install marked --save
+npm install marked-katex --save
 ```
 
 ## Usage
