@@ -16,7 +16,7 @@ npm install marked-katex --save
 Minimal usage:
 
 ```js
-var marked = require('marked');
+var marked = require('marked-katex');
 console.log(marked('I am using __markdown__.'));
 // Outputs: <p>I am using <strong>markdown</strong>.</p>
 ```
@@ -24,7 +24,7 @@ console.log(marked('I am using __markdown__.'));
 Example setting options with default values:
 
 ```js
-var marked = require('marked');
+var marked = require('marked-katex');
 marked.setOptions({
   renderer: new marked.Renderer(),
   gfm: true,
@@ -92,7 +92,7 @@ A function to integrated with kaTex. If you want to show your math expression in
 
 **In Server Side**
 ```
-var marked = require('marked');
+var marked = require('marked-katex');
 var katex = require('katex');
 marked.setOptions({
   highlight: function(code, lang) {
@@ -146,7 +146,7 @@ A function to highlight code blocks. The first example below uses async highligh
 [highlight.js][highlight]:
 
 ```js
-var marked = require('marked');
+var marked = require('marked-katex');
 
 var markdownString = '```js\n console.log("hello"); \n```';
 
@@ -208,7 +208,7 @@ The renderer option allows you to render tokens in a custom manner. Here is an
 example of overriding the default heading token rendering by adding an embedded anchor tag like on GitHub:
 
 ```javascript
-var marked = require('marked');
+var marked = require('marked-katex');
 var renderer = new marked.Renderer();
 
 renderer.heading = function (text, level) {
